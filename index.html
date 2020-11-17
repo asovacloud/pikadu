@@ -8,29 +8,58 @@
 
     <!-- Don't use this in production: -->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+      .car {
+        display: inline-block;
+        border: 2px solid #ccc;
+        box-shadow: 2px 2px 1px #eee;
+        padding: 10px;
+        margin-right: 10px;
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>
+
+    <!-- <div class="car">
+      <h3>Ford Focus</h3>
+      <p>Year: <strong>2017</strong></p>
+    </div>
+
+    <div class="car">
+      <h3>Audi A8</h3>
+      <p>Year: <strong>2020</strong></p>
+    </div>
+
+    <div class="car">
+      <h3>Mazda</h3>
+      <p>Year: <strong>2010</strong></p>
+    </div> -->
+
     <script type="text/babel">
 
-      ReactDOM.render(
-        <h1>Yo buddy, Yo!</h1>,
-        document.getElementById('root')
+      const Car = (props) => {
+        return (
+          <div className="car">
+            <h3>{props.name}</h3>
+            <p>Year: <strong>{props.year}</strong></p>
+            <small>This is a car.</small>
+          </div>
+        );
+      }
+
+      const App = (
+        <div>
+          <Car name="BMW" year="2020" />
+          <Car name="Ford Focus" year="2010" />
+          <Car name="Audi A8" year="2019" />
+        </div>
       );
 
+      ReactDOM.render(
+        App,
+        document.getElementById('root'));
+
     </script>
-    <!--
-      Note: this page is a great way to try React but it's not suitable for production.
-      It slowly compiles JSX with Babel in the browser and uses a large development build of React.
-
-      Read this section for a production-ready setup with JSX:
-      https://reactjs.org/docs/add-react-to-a-website.html#add-jsx-to-a-project
-
-      In a larger project, you can use an integrated toolchain that includes JSX instead:
-      https://reactjs.org/docs/create-a-new-react-app.html
-
-      You can also use React without JSX, in which case you can remove Babel:
-      https://reactjs.org/docs/react-without-jsx.html
-    -->
   </body>
 </html>
