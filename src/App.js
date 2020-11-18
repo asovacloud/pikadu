@@ -22,20 +22,22 @@ class App extends Component {
     pageTitle: 'Yo, buddy!!!'
   }
 
-  changeTitleHandler = () => this.setState(state => ({pageTitle: state.pageTitle + ' (changed).'}));
+  changeTitleHandler = (newTitle) => this.setState({pageTitle: newTitle});
 
   render() {
     const divStyle = {
       textAlign: 'center'
     }
 
-    const cars = this.state.cars.map(car => <Car name={car.name} year={car.year} />);
+    const cars = this.state.cars.map(car => {
+      return <Car name={car.name} year={car.year} onChangeTitle={this.changeTitleHandler} />
+    });
   
     return (
       <div style={divStyle}>
         <h1>{this.state.pageTitle}</h1>
 
-        <button onClick={this.changeTitleHandler}>Change Title</button>
+        <button onClick={this.changeTitleHandler.bind(this, 'Super Title')}>Change Title</button>
   
         { cars }
       </div>
