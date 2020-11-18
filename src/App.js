@@ -22,6 +22,8 @@ class App extends Component {
     pageTitle: 'Yo, buddy!!!'
   }
 
+  changeTitleHandler = () => this.setState(state => ({pageTitle: state.pageTitle + ' (changed).'}));
+
   render() {
     const divStyle = {
       textAlign: 'center'
@@ -32,6 +34,8 @@ class App extends Component {
     return (
       <div style={divStyle}>
         <h1>{this.state.pageTitle}</h1>
+
+        <button onClick={this.changeTitleHandler}>Change Title</button>
   
         { cars }
       </div>
