@@ -1,26 +1,42 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
 import Car from './Car/Car';
 
-function App() {
-  const divStyle = {
-    textAlign: 'center'
+class App extends Component {
+
+  state = {
+    cars: [
+      {
+        name: 'BMW',
+        year: 2021
+      },
+      {
+        name: 'Audi A8',
+        year: '2019'
+      },
+      {
+        name: 'Mazda',
+        year: 2010
+      }
+    ],
+    pageTitle: 'Yo, buddy!!!'
   }
 
-  return (
-    <div style={divStyle}>
-      <h1>Yo, buddy...</h1>
+  render() {
+    const divStyle = {
+      textAlign: 'center'
+    }
 
-      <Car name={'BMW'} year={2021}>
-        <p style={{color: 'blue'}}>COLOR</p>
-      </Car>
-      <Car name={'Audi'} year={2019}>
-        <p style={{color: 'tomato'}}>COLOR</p>
-      </Car>
-      <Car name={'Mazda'} year={2010} />
-    </div>
-  );
-
+    const cars = this.state.cars.map(car => <Car name={car.name} year={car.year} />);
+  
+    return (
+      <div style={divStyle}>
+        <h1>{this.state.pageTitle}</h1>
+  
+        { cars }
+      </div>
+    );
+  }
 }
 
 export default App;
