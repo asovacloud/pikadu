@@ -1,10 +1,9 @@
 import React from 'react';
 
-const Car = () => (
+// eslint-disable-next-line
+export default () => (
   <div>
-    <h6>This is a car component.</h6>
-    <strong>test</strong>
+    <p>This is a car component.</p>
+    <p>Number: <strong>{Math.round(Math.random() * 100)}</strong></p>
   </div>
-);
-
-export default Car;
+)
