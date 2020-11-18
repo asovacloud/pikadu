@@ -11,8 +11,9 @@ function App() {
     <div style={divStyle}>
       <h1>Yo, buddy...</h1>
 
-      <Car />
-      <Car />
+      <Car name={'BMW'} year={2021} />
+      <Car name={'Audi'} year={2019} />
+      <Car name={'Mazda'} year={2010} />
     </div>
   );
 
