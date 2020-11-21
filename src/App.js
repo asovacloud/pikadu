@@ -20,29 +20,50 @@ class App extends Component {
       }
     ],
     pageTitle: 'Yo, buddy.',
-    showCars: false
+    showCars: true
   }
 
-  changeTitleHandler = (newTitle) => this.setState({pageTitle: newTitle});
+  changeNameHandler = (name, idx) => {
+    this.setState(state => {
+      const cars = state.cars.concat();
+      cars[idx].name = name;
+      return {
+        cars
+      }
+    });
+  };
 
   toggleCarsHandler = () => this.setState(state => {
     return {
       showCars: !state.showCars
     }
-  })
+  });
+
+  deleteHandler = (index) => {
+    console.log(index);
+    this.setState(state => {
+      const cars = state.cars.concat();
+      cars.splice(index, 1);
+
+      return { cars }
+    })
+  };
 
   render() {
     const divStyle = {
       textAlign: 'center'
     }
 
-    const cars = this.state.cars.map(car => {
+    const cars = this.state.cars.map((car, idx) => {
       return (
         <Car
-          key={car.name}
+          key={idx}
           name={car.name}
           year={car.year}
-          onChangeTitle={this.changeTitleHandler} />
+          onDelete={this.deleteHandler.bind(null, idx)}
+          onChangeName={event => {
+            return this.changeNameHandler(event.target.value, idx)
+          }} />
       );
     });
   
