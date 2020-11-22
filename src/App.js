@@ -73,7 +73,14 @@ class App extends Component {
 
         <button onClick={this.toggleCarsHandler}>Toggle Cars</button>
   
-        { this.state.showCars && cars }
+        { this.state.showCars && (
+            <div style={{
+              maxWidth: '19rem',
+              margin: '0 auto'
+            }}>
+              {cars}
+            </div>
+        ) }
       </div>
     );
   }
