@@ -20,7 +20,7 @@ class App extends Component {
       }
     ],
     pageTitle: 'Yo, buddy.',
-    showCars: true
+    showCars: false
   }
 
   changeNameHandler = (name, idx) => {
