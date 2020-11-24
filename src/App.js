@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import './App.css';
 import Car from './Car/Car';
+
+import './App.scss';
 
 class App extends Component {
 
