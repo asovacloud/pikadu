@@ -5,23 +5,27 @@ import './App.scss';
 
 class App extends Component {
 
-  state = {
-    cars: [
-      {
-        name: 'BMW',
-        year: 2021
-      },
-      {
-        name: 'Audi A8',
-        year: '2019'
-      },
-      {
-        name: 'Mazda',
-        year: 2010
-      }
-    ],
-    pageTitle: 'Yo, buddy.',
-    showCars: false
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      cars: [
+        {
+          name: 'BMW',
+          year: 2021
+        },
+        {
+          name: 'Audi A8',
+          year: '2019'
+        },
+        {
+          name: 'Mazda',
+          year: 2010
+        }
+      ],
+      pageTitle: 'Yo, buddy.',
+      showCars: false
+    }
   }
 
   changeNameHandler = (name, idx) => {
