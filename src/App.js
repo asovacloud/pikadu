@@ -1,26 +1,31 @@
 import React, { Component } from 'react';
-import './App.css';
 import Car from './Car/Car';
+
+import './App.scss';
 
 class App extends Component {
 
-  state = {
-    cars: [
-      {
-        name: 'BMW',
-        year: 2021
-      },
-      {
-        name: 'Audi A8',
-        year: '2019'
-      },
-      {
-        name: 'Mazda',
-        year: 2010
-      }
-    ],
-    pageTitle: 'Yo, buddy.',
-    showCars: true
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      cars: [
+        {
+          name: 'BMW',
+          year: 2021
+        },
+        {
+          name: 'Audi A8',
+          year: '2019'
+        },
+        {
+          name: 'Mazda',
+          year: 2010
+        }
+      ],
+      pageTitle: 'Yo, buddy.',
+      showCars: false
+    }
   }
 
   changeNameHandler = (name, idx) => {
@@ -69,7 +74,8 @@ class App extends Component {
   
     return (
       <div style={divStyle}>
-        <h1>{this.state.pageTitle}</h1>
+        {/*<h1>{this.state.pageTitle}</h1>*/}
+        <h1>{ this.props.title }</h1>
 
         <button onClick={this.toggleCarsHandler}>Toggle Cars</button>
   
