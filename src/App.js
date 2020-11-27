@@ -13,7 +13,8 @@ class App extends Component {
       cars: [
         { name: 'BMW', year: 2021 },
         { name: 'Audi A8', year: '2019' },
-        { name: 'Mazda', year: 2010 }
+        { name: 'Mazda', year: 2010 },
+        { name: 'Suzuki', year: 2021 }
       ],
       pageTitle: 'Yo, buddy.',
       showCars: false
