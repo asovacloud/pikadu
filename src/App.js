@@ -6,22 +6,15 @@ import './App.scss';
 class App extends Component {
 
   constructor(props) {
+    console.log('App constructor');
     super(props);
 
     this.state = {
       cars: [
-        {
-          name: 'BMW',
-          year: 2021
-        },
-        {
-          name: 'Audi A8',
-          year: '2019'
-        },
-        {
-          name: 'Mazda',
-          year: 2010
-        }
+        { name: 'BMW', year: 2021 },
+        { name: 'Audi A8', year: '2019' },
+        { name: 'Mazda', year: 2010 },
+        { name: 'Suzuki', year: 2021 }
       ],
       pageTitle: 'Yo, buddy.',
       showCars: false
@@ -45,7 +38,6 @@ class App extends Component {
   });
 
   deleteHandler = (index) => {
-    console.log(index);
     this.setState(state => {
       const cars = state.cars.concat();
       cars.splice(index, 1);
@@ -54,7 +46,16 @@ class App extends Component {
     })
   };
 
+  componentWillMount() {
+    console.log('App componentWillMount');
+  }
+
+  componentDidMount() {
+    console.log('App componentDidMount')
+  }
+
   render() {
+    console.log('App render');
     const divStyle = {
       textAlign: 'center'
     }
