@@ -8,7 +8,9 @@ class App extends Component {
     const {
       counter,
       onDecrement,
-      onIncrement
+      onIncrement,
+      onIncrementNumber,
+      onDecrementNumber
     } = this.props;
     return (
       <div className={'App'}>
@@ -18,7 +20,9 @@ class App extends Component {
 
         <div className="Actions">
           <button onClick={onDecrement}>-1</button>&nbsp;&nbsp;&nbsp;&nbsp;
-          <button onClick={onIncrement}>1</button>
+          <button onClick={onIncrement}>1</button>&nbsp;&nbsp;&nbsp;&nbsp;
+          <button onClick={onDecrementNumber.bind(null, 42)}>-42</button>&nbsp;&nbsp;&nbsp;&nbsp;
+          <button onClick={onIncrementNumber.bind(null, 42)}>42</button>
         </div>
       </div>
     );
@@ -34,7 +38,9 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     onIncrement: () => dispatch({ type: 'INCREMENT' }),
-    onDecrement: () => dispatch({ type: 'DECREMENT' })
+    onDecrement: () => dispatch({ type: 'DECREMENT' }),
+    onIncrementNumber: (number) => dispatch({ type: 'INCREMENT_NUMBER', payload: number }),
+    onDecrementNumber: (number) => dispatch({ type: 'DECREMENT_NUMBER', payload: number })
   }
 };
 
