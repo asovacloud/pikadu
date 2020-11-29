@@ -21,8 +21,8 @@ class App extends Component {
         <hr/>
   
         <div className="Actions">
-          <button onClick={() => this.updateCounter(1)}>Increment 1</button>
-          <button onClick={() => this.updateCounter(-1)}>Decrement 1</button>
+            <button onClick={() => this.updateCounter(-1)}>-1</button>&nbsp;&nbsp;&nbsp;&nbsp;
+            <button onClick={() => this.updateCounter(1)}>1</button>
         </div>
       </div>
     );
