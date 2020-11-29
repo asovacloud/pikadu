@@ -12,6 +12,14 @@ const rootReducer = (state = initialState, action) => {
             return {
                 counter: state.counter -1
             }
+        case 'INCREMENT_NUMBER':
+            return {
+                counter: state.counter + action.payload
+            }
+        case 'DECREMENT_NUMBER':
+            return {
+                counter: state.counter - action.payload
+            }
         default:
             return state;
     }
