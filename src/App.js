@@ -1,32 +1,34 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import './App.scss';
 
 class App extends Component {
 
-  state = {
-    counter: 0
-  }
-
   updateCounter(value) {
-    this.setState({
+    /*this.setState({
       counter: this.state.counter + value
-    })
+    })*/
   }
 
   render() {
     return (
       <div className={'App'}>
-        <h1>Counter <strong>{this.state.counter}</strong></h1>
+        <h1>Counter <strong>{this.props.counter}</strong></h1>
 
         <hr/>
-  
+
         <div className="Actions">
-            <button onClick={() => this.updateCounter(-1)}>-1</button>&nbsp;&nbsp;&nbsp;&nbsp;
-            <button onClick={() => this.updateCounter(1)}>1</button>
+          <button onClick={() => this.updateCounter(-1)}>-1</button>&nbsp;&nbsp;&nbsp;&nbsp;
+          <button onClick={() => this.updateCounter(1)}>1</button>
         </div>
       </div>
     );
   }
 }
 
-export default App;
+function mapStateToProps(state) {
+  return {
+    counter: state.counter
+  }
+}
+export default connect(mapStateToProps)(App);
