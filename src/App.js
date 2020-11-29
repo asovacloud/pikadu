@@ -4,31 +4,38 @@ import './App.scss';
 
 class App extends Component {
 
-  updateCounter(value) {
-    /*this.setState({
-      counter: this.state.counter + value
-    })*/
-  }
-
   render() {
+    const {
+      counter,
+      onDecrement,
+      onIncrement
+    } = this.props;
     return (
       <div className={'App'}>
-        <h1>Counter <strong>{this.props.counter}</strong></h1>
+        <h1>Counter <strong>{counter}</strong></h1>
 
         <hr/>
 
         <div className="Actions">
-          <button onClick={() => this.updateCounter(-1)}>-1</button>&nbsp;&nbsp;&nbsp;&nbsp;
-          <button onClick={() => this.updateCounter(1)}>1</button>
+          <button onClick={onDecrement}>-1</button>&nbsp;&nbsp;&nbsp;&nbsp;
+          <button onClick={onIncrement}>1</button>
         </div>
       </div>
     );
   }
 }
 
-function mapStateToProps(state) {
+const mapStateToProps = state => {
   return {
     counter: state.counter
   }
-}
-export default connect(mapStateToProps)(App);
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    onIncrement: () => dispatch({ type: 'INCREMENT' }),
+    onDecrement: () => dispatch({ type: 'DECREMENT' })
+  }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
