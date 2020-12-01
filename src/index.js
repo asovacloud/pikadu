@@ -8,14 +8,6 @@ import rootReducer from './redux/rootReducer';
 import './index.scss';
 
 const store = createStore(rootReducer);
-store.subscribe(() => {
-    console.log(store.getState());
-});
-
-store.dispatch({ type: 'INCREMENT' });
-store.dispatch({ type: 'INCREMENT' });
-store.dispatch({ type: 'INCREMENT' });
-store.dispatch({ type: 'DECREMENT' });
 
 const app = (
     <Provider store={store}>
