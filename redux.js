@@ -38,6 +38,7 @@ const decCounter = {
 };
 
 store.dispatch(incCounter);
+store.dispatch(incCounter);
 store.dispatch(decCounter);
 
 store.dispatch({

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Counter from './Counter';
 import './App.scss';
 
 class App extends Component {
@@ -21,9 +22,11 @@ class App extends Component {
         <div className="Actions">
           <button onClick={onDecrement}>-1</button>&nbsp;&nbsp;&nbsp;&nbsp;
           <button onClick={onIncrement}>1</button>&nbsp;&nbsp;&nbsp;&nbsp;
-          <button onClick={onDecrementNumber.bind(null, 42)}>-42</button>&nbsp;&nbsp;&nbsp;&nbsp;
+          <button onClick={onDecrementNumber.bind(null, -42)}>-42</button>&nbsp;&nbsp;&nbsp;&nbsp;
           <button onClick={onIncrementNumber.bind(null, 42)}>42</button>
         </div>
+
+        <Counter />
       </div>
     );
   }
@@ -31,7 +34,7 @@ class App extends Component {
 
 const mapStateToProps = state => {
   return {
-    counter: state.counter
+    counter: state.counter1.counter
   }
 };
 
