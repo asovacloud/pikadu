@@ -7,21 +7,9 @@ import App from './App';
 import rootReducer from './redux/rootReducer';
 import './index.scss';
 
-/*function loggerMiddleware(store) {
-  return function (next) {
-    return function (action) {
-      const result = next(action);
-
-      console.log("Middleware", store.getState());
-      return result;
-    }
-  }
-}*/
-
 const loggerMiddleware = store => next => action => {
   const result = next(action);
 
-  console.log("Middleware: ", store.getState());
   return result;
 };
 
