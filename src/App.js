@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Counter from './Counter';
+
+import {increment, decrement, incNumber, decNumber} from "./redux/actions/actions";
 import './App.scss';
 
 class App extends Component {
@@ -40,10 +42,10 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    onIncrement: () => dispatch({ type: 'INCREMENT' }),
-    onDecrement: () => dispatch({ type: 'DECREMENT' }),
-    onIncrementNumber: (number) => dispatch({ type: 'INCREMENT_NUMBER', payload: number }),
-    onDecrementNumber: (number) => dispatch({ type: 'DECREMENT_NUMBER', payload: number })
+    onIncrement: () => dispatch(increment()),
+    onDecrement: () => dispatch(decrement()),
+    onIncrementNumber: (number) => dispatch(incNumber(number)),
+    onDecrementNumber: (number) => dispatch(decNumber(number))
   }
 };
 

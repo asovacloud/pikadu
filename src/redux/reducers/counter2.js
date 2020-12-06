@@ -1,14 +1,16 @@
+import {DECREMENT2, INCREMENT2} from "../actions/actionTypes";
+
 const initialState = {
   counter2: 200
 };
 
 const counter2 = (state = initialState, action) => {
   switch (action.type) {
-    case 'INCREMENT2':
+    case INCREMENT2:
       return {
         counter2: state.counter2 + 1
       }
-    case 'DECREMENT2':
+    case DECREMENT2:
       return {
         counter2: state.counter2 -1
       }
