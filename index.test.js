@@ -111,6 +111,7 @@ describe("Lodash: groupBy", () => {
   test("should NOT to return array", () => {
     expect(_.groupBy([], Math.trunc)).not.toBeInstanceOf(Array);
     expect(_.groupBy([], Math.trunc)).toBeInstanceOf(Object);
+    expect(_.groupBy([], Math.tranc)).not.toBeInstanceOf(Function);
   });
 })
 
