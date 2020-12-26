@@ -1,49 +1,42 @@
-<h1 align="center">
-  <a href="https://testingjavascript.com/courses/javascript-mocking-fundamentals">JavaScript Mocking Fundamentals</a>
-</h1>
+# react-testing-library-course
 
-<div align="center">
-  <h2><a href="https://testingjavascript.com">TestingJavaScript.com</a></h2>
-  <a href="https://testingjavascript.com">
-    <img
-      width="500"
-      alt="Learn the smart, efficient way to test any JavaScript application."
-      src="https://kentcdodds.com/images/testingjavascript-promo/tjs-4.jpg"
-    />
-  </a>
-</div>
+_Course material for testing React components using react-testing-library_
 
-<hr />
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-<p align="center" style="font-size: 1.2rem;">
-  Learn how mocking in JavaScript tests works by implementing them from scratch!
-</p>
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-<hr />
+- `react-dom.js` - Render a React component for testing
+- `jest-dom.js` - Use jest-dom for improved assertions
+- `dom-testing-library.js` - Use dom-testing-library to write more maintainable
+  React tests
+- `react-testing-library.js` - Use react-testing-library to render and test
+  React Components
+- `localized.js` - Testing localized content with react-testing-library
+- `state.js` - Test React Component state changes with react-testing-library
+- `prop-updates.js` - Test prop updates with react-testing-library
+- `a11y.js` - Test accessibility of rendered React Components with jest-axe
+- `dependency-injection.js` - Mock HTTP Requests with Dependency Injection in
+  React Component Tests
+- `http-jest-mock.js` - Mock HTTP Requests with jest.mock in React Component
+  Tests
+- `mock-component.js` - Mock react-transition-group in React Component Tests
+  with jest.mock
+- `error-boundaries.js` - Test componentDidCatch handler error boundaries with
+  react-testing-library
+- `tdd-markup.js` - Test drive the development of a React Form with
+  react-testing-library
+- `tdd-functionality.js` - TDD the functionality of a React Form with
+  react-testing-library
+- `react-router.js` - Test react-router Provider history object in React
+  Component Tests with createMemoryHistory
+- `redux.js` - Test a redux connected React Component
+- `custom-hook.js` - Test a custom hook
+- `portals.js` - Test React portals
+- `unmounting.js` - Test Unmounting a React Component with react-testing-library
+- `app.js` - Testing the full application.
 
-In this material, we have a set of `no-framework` tests that correspond to a set
-of jest tests (in the `__tests__` directory). The idea is that (with the
-exception of the first test), you look at the jest version first, then see how
-that would be implemented without a testing framework.
-
-Order of material:
-
-1.  `monkey-patching.js` (no jest version)
-2.  `mock-fn.js`
-3.  `spy.js`
-4.  `inline-module-mock.js`
-5.  `external-mock-module.js`
-
-The files are intended to test the `thumb-war.js` module and mock the `utils`
-module.
-
-To run the tests, run `npx jest`. To start watch mode run `npx jest --watch`
-
-## Custom jest runner.
-
-You can definitely run the `no-framework` files just using `node` (like this:
-`node src/no-framework/monkey-patching.js`), but in an effort to make running
-these easier, I created a custom jest runner that uses jest to run the files,
-but allow them to be run without the jest testing framework. It's really cool.
-It uses [`create-jest-runner`](https://www.npmjs.com/package/create-jest-runner)
-and should probably be published eventually.
+> Note: the setup for this project uses kcd-scripts. Don't worry about that. You
+> can learn about how to configure jest properly in the "Configure Jest for
+> Testing JavaScript Applications" module of TestingJavaScript.com
