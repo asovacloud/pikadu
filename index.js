@@ -1,2 +1,3 @@
-// see the tests
-
+module.exports = `
+  Open the tests!
+`
