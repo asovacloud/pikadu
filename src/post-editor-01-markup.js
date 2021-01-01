@@ -4,13 +4,13 @@ function Editor() {
   return (
     <form>
       <label htmlFor="title-input">Title</label>
-      <input id="title-input" />
+      <input type="text" name="title" id="title-input" />
 
-      <label htmlFor="content-input">Content</label>
-      <textarea id="content-input" />
+      <label htmlFor="title-content">Content</label>
+      <textarea name="content" id="title-content" cols="30" rows="10" />
 
-      <label htmlFor="tags-input">Tags</label>
-      <input id="tags-input" />
+      <label htmlFor="title-tags">Tags</label>
+      <input type="text" name="tags" id="title-tags" />
 
       <button type="submit">Submit</button>
     </form>
