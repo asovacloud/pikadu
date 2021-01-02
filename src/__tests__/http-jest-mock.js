@@ -10,10 +10,10 @@ test('loads greetings on click', async () => {
   mockLoadGreeting.mockResolvedValueOnce({data: {greeting: testGreeting}})
   const {getByLabelText, getByText} = render(<GreetingLoader />)
   const nameInput = getByLabelText(/name/i)
-  const loadButton = getByText(/load/i)
-  nameInput.value = 'Mary'
+  const loadButton = getByText(/load greeting/i)
+  nameInput.value = 'Sofia'
   fireEvent.click(loadButton)
-  expect(mockLoadGreeting).toHaveBeenCalledWith('Mary')
+  expect(mockLoadGreeting).toHaveBeenCalledWith('Sofia')
   expect(mockLoadGreeting).toHaveBeenCalledTimes(1)
   await wait(() =>
     expect(getByLabelText(/greeting/i)).toHaveTextContent(testGreeting),
