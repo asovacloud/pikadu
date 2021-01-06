@@ -1,9 +1,9 @@
 import React from 'react'
 import {render, fireEvent, wait} from '@testing-library/react'
-import {build, fake, sequence} from 'test-data-bot'
 import {Redirect as MockRedirect} from 'react-router'
 import {savePost as mockSavePost} from '../api'
 import {Editor} from '../post-editor-06-generate-data'
+import {build, fake, sequence} from 'test-data-bot'
 
 jest.mock('react-router', () => {
   return {
@@ -16,14 +16,14 @@ afterEach(() => {
   jest.clearAllMocks()
 })
 
+const userBuilder = build('User').fields({
+  id: sequence(s => `user=${s}`),
+})
+
 const postBuilder = build('Post').fields({
   title: fake(f => f.lorem.words()),
   content: fake(f => f.lorem.paragraphs().replace(/\r/g, '')),
-  tags: fake(f => [f.lorem.word(), f.lorem.word(), f.lorem.word()]),
-})
-
-const userBuilder = build('User').fields({
-  id: sequence(s => `user-${s}`),
+  tags: fake(f => [f.lorem.words(), f.lorem.words(), f.lorem.words()]),
 })
 
 test('renders a form with title, content, tags, and a submit button', async () => {
