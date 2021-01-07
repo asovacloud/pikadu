@@ -57,7 +57,7 @@ test('renders a form with title, content, tags, and a submit button', async () =
   await wait(() => expect(MockRedirect).toHaveBeenCalledWith({to: '/'}, {}))
 })
 
-test('renders an error message from the server', async () => {
+test('renders an error message from the server and some spy', async () => {
   const testError = 'test error'
   mockSavePost.mockRejectedValueOnce({data: {error: testError}})
   const fakeUser = userBuilder()
