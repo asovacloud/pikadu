@@ -58,7 +58,7 @@ test('renders a form with title, content, tags, and a submit button', async () =
 })
 
 test('renders an error message from the server and some spy', async () => {
-  const testError = 'test error'
+  const testError = 'test error should be there'
   mockSavePost.mockRejectedValueOnce({data: {error: testError}})
   const fakeUser = userBuilder()
   const {getByText, findByRole} = render(<Editor user={fakeUser} />)
