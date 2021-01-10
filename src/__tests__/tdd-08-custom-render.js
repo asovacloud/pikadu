@@ -35,6 +35,7 @@ function renderEditor() {
   utils.getByLabelText(/content/i).value = fakePost.content
   utils.getByLabelText(/tags/i).value = fakePost.tags.join(', ')
   const submitButton = utils.getByText(/submit/i)
+
   return {
     ...utils,
     submitButton,
@@ -44,9 +45,9 @@ function renderEditor() {
 }
 
 test('renders a form with title, content, tags, and a submit button', async () => {
-  mockSavePost.mockResolvedValueOnce()
-  const {submitButton, fakePost, fakeUser} = renderEditor()
   const preDate = new Date().getTime()
+  mockSavePost.mockResolvedValueOnce()
+  const {submitButton, fakeUser, fakePost} = renderEditor()
 
   fireEvent.click(submitButton)
 
