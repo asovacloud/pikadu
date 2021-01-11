@@ -24,7 +24,7 @@ test('allows customization of the step', () => {
   expect(result.current.count).toBe(0)
 })
 
-test('the step can be changed', () => {
+test('the step can be changed and updated', () => {
   const {result, rerender} = renderHook(useCounter, {
     initialProps: {step: 3},
   })
