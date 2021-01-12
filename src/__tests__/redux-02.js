@@ -1,12 +1,13 @@
 import React from 'react'
-import {createStore} from 'redux'
-import {Provider} from 'react-redux'
 import {render, fireEvent} from '@testing-library/react'
+import {Provider} from 'react-redux'
+import {createStore} from 'redux'
+
 import {Counter} from '../redux-counter'
 import {store as appStore} from '../redux-store'
 import {reducer} from '../redux-reducer'
 
-test('can render with redux with defaults', () => {
+test('can render with redux with default', () => {
   const {getByLabelText, getByText} = render(
     <Provider store={appStore}>
       <Counter />
