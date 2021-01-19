@@ -15,7 +15,7 @@ test('allows customization of the initial count and something else', () => {
   expect(result.current.count).toBe(3)
 })
 
-test('allows customization of the steps', () => {
+test('allows customization of the steps and one more step', () => {
   const {result} = renderHook(useCounter, {initialProps: {step: 2}})
   expect(result.current.count).toBe(0)
   act(() => result.current.increment())
