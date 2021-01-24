@@ -98,10 +98,10 @@ class Twitter {
     console.log('this.tweets: ', this.tweets)
   }
 
-  renderPosts(tweets) {
+  renderPosts(posts) {
     this.elements.listElem.textContent = ''
 
-    tweets.forEach(({id, userName, nickName, text, img, likes, getDate}) => {
+    posts.forEach(({id, userName, nickName, text, img, likes, getDate}) => {
       this.elements.listElem.insertAdjacentHTML(
         'beforeend',
         `
@@ -159,13 +159,3 @@ const twitter = new Twitter({
 })
 
 console.log(twitter)
-
-/*twitter.tweets.addPost({
-  userName: 'Sofia',
-  nickName: 'sofka',
-  postDate: '22.01.2021',
-  text: 'Super girl!!!',
-  img: "<img src='picture.jpg' />",
-  likes: '200',
-  liked: true,
-});*/
