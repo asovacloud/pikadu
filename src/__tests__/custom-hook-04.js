@@ -13,7 +13,7 @@ test('exposes the count and increment/decrement functions', () => {
   expect(result.current.count).toBe(1)
 })
 
-test('allows customization of the initial count small changes', () => {
+test('allows customization of the initial count small changes and something else', () => {
   const {result} = renderHook(useCounter, {
     initialProps: {
       initialCount: 4,
